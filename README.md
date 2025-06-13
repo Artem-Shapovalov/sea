@@ -10,6 +10,8 @@
 
 C and C++ development toolkit.
 
+https://github.com/user-attachments/assets/a75c76e0-7b8f-4ded-bff6-d0f6c7bd39f4
+
 # Motivation
 
 Lots of the projects have the common pain point - the build system. Build scrips are complicated, testing and CI is complicated, everything is complicated, build systems requires lots of time to learn it just for simple task - build a binary. Further more, all that steps should be billable, but customers don't want ever hear about all of that.
