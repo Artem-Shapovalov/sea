@@ -1,5 +1,6 @@
 <p align="center">
   <img src="logo.svg" width="300"/>
+  <br>
   <a href="https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml">
     <img src="https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml/badge.svg"/>
   </a>
