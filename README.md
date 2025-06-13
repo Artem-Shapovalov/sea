@@ -1,10 +1,9 @@
-![sea](logo.svg)
-
 <p align="center">
-  <img src="logo.svg" width="100"
+  <img src="logo.svg" width="300"/>
+  <a href="https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml">
+    <img src="https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml/badge.svg"/>
+  </a>
 </p>
-
-[![Build](https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml/badge.svg)](https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml)
 
 Every C/C++ developer deserves just to develop his project.
 
