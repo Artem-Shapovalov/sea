@@ -1,4 +1,8 @@
-![sea](logo.svg) Every C/C++ developer deserves just to develop his project.
+![sea](logo.svg)
+
+[![Build](https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml/badge.svg)](https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml)
+
+Every C/C++ developer deserves just to develop his project.
 
 # sea
 
