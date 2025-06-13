@@ -1,12 +1,10 @@
 <p align="center">
-  <img src="logo.svg" width="300"/>
-  <br>
+  <img src="logo.svg" width="300"/><br>
+  Every C/C++ developer deserves just to develop his project.<br>
   <a href="https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml">
-    <img src="https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml/badge.svg"/>
+    <img style="margin: 30px;" src="https://github.com/Artem-Shapovalov/sea/actions/workflows/build.yml/badge.svg"/>
   </a>
 </p>
-
-Every C/C++ developer deserves just to develop his project.
 
 # sea
 
