@@ -27,6 +27,7 @@ std::time_t last_modified(std::string path);
 std::string ctx(std::string key);
 bool ctx(std::string key, std::string value);
 bool ctx_has_key(std::string key);
+std::string ctx_keys();
 std::list<std::string> tokenize(std::string line);
 std::string detokenize(std::list<std::string> tokens);
 std::string eval(std::string expr, bool is_subex = false);

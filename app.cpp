@@ -163,6 +163,11 @@ bool ask_yn(std::string question)
 	return false;
 }
 
+void print_variables()
+{
+	std::printf("Available variables: %s\n", ctx_keys().c_str());
+}
+
 static void set_project_name()
 {
 	ctx("project_name", ask("Enter the project name: "));
@@ -189,12 +194,20 @@ static void set_project_type()
 
 void add_item(std::list<std::string>& tokens)
 {
+	print_variables();
 	tokens.push_back(ask("Enter the new item: "));
 }
 
 void del_item(std::list<std::string>& tokens)
 {
-	size_t idx = ask_num("Select item to delete: ", tokens);
+	std::list<std::string> variants = tokens;
+	variants.push_back("Go back");
+	size_t idx = ask_num("Select item to delete: ", variants);
+	if (idx == variants.size())
+	{
+		return;
+	}
+
 	std::list<std::string>::iterator iter = tokens.begin();
 
 	for (size_t i = 0; i < idx - 1; i++)
@@ -207,7 +220,14 @@ void del_item(std::list<std::string>& tokens)
 
 void edit_item(std::list<std::string>& tokens)
 {
-	size_t idx = ask_num("Select item to edit: ", tokens);
+	std::list<std::string> variants = tokens;
+	variants.push_back("Go back");
+	size_t idx = ask_num("Select item to edit: ", variants);
+	if (idx == variants.size())
+	{
+		return;
+	}
+
 	std::list<std::string>::iterator iter = tokens.begin();
 
 	for (size_t i = 0; i < idx - 1; i++)

@@ -314,16 +314,8 @@ std::string build_cmd(build_item item)
 	return cmd;
 }
 
-bool process(build_item& item)
+bool process_item(build_item& item)
 {
-	for (build_item& i : item.deps)
-	{
-		if (process(i) == false)
-		{
-			return false;
-		}
-	}
-
 	std::string cmd = build_cmd(item);
 	if (cmd.empty())
 	{
@@ -340,7 +332,50 @@ bool process(build_item& item)
 
 	std::printf("%s\n", cmd.c_str());
 	int res = exec(cmd);
-	if (res)
+	if (res != 0)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool deps_updated(build_item& item, std::time_t tmsp)
+{
+	for (build_item& i : item.deps)
+	{
+		if (last_modified(i.path) > tmsp)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool process(build_item& item)
+{
+	std::time_t tmsp = last_modified(item.path);
+
+	for (build_item& obj : item.deps)
+	{
+		if (deps_updated(obj, tmsp))
+		{
+			for (build_item& src : obj.deps)
+			{
+				if (!process_item(src))
+				{
+					return false;
+				}
+			}
+		}
+
+		if (!process_item(obj))
+		{
+			return false;
+		}
+	}
+
+	if (deps_updated(item, tmsp) && !process_item(item))
 	{
 		return false;
 	}

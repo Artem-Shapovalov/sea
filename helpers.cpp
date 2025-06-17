@@ -216,6 +216,11 @@ bool is_dir(std::string path)
 
 std::time_t last_modified(std::string path)
 {
+	if (!path_exists(path))
+	{
+		return 0;
+	}
+
 	std::filesystem::file_time_type t =
 		std::filesystem::last_write_time(path);
 	auto tp = std::chrono::time_point_cast
@@ -257,6 +262,26 @@ bool ctx_has_key(std::string key)
 	}
 
 	return true;
+}
+
+std::string ctx_keys()
+{
+	std::string res;
+
+	for (std::map<std::string, std::string>::iterator i
+			= ctx_values.begin();
+		i != ctx_values.end();
+		i++)
+	{
+		if (!res.empty())
+		{
+			res.append(" ");
+		}
+
+		res.append(i->first);
+	}
+
+	return res;
 }
 
 std::list<std::string> tokenize(std::string line)

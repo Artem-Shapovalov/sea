@@ -20,9 +20,31 @@ This project goal is make your development as a vacation on seashore.
 
 # Features
 
-- Interactive interface, you don't need to learn harsh syntax and read tons of documents, ask LLM to solve your problem, spend a time at stackoverflow, etc. Just relax.
+- Interactive interface:
 
-- Build system, it just builds the sources and do not bloat your source directory, it just builds all of containment in a single file.
+    - Easy to use because all the necessary info is always in front of your eyes.
+
+    - Do not be scared of mistake.
+
+- CLI interface:
+
+    - Just 4 keys including "--help".
+
+    - May build and clean, that convenient to use the sea in your scripts.
+
+- Project management:
+
+    - Avoids compiler-specific features.
+
+    - Have expression evaluator for all of the project settings.
+
+- Build system:
+
+    - Do not require build scripts at all, just build every source file around in the output binary of chosen type.
+
+    - Builds only files affected to changes.
+
+    - Do not bloat your project directory with lots of the objects.
 
 # Installation
 
@@ -46,24 +68,26 @@ Clone the project and 'make install'
 
 # Not implemented at this iteration
 
-- Build system, tracking changes and conditional build.
+- Build system:
 
-- Build system, for now it works with gcc only.
+    - For now it works with gcc only.
 
-- Build system, make debug and release binaries build.
+    - for now no debug versions.
 
-- Interface, the project variables are not visible for now, but can be used.
+- Hosts:
 
-- Hosts, implement Windows version. May be mac too.
+    - for now it's linux-only.
 
-# Project notes
+# Project rules
 
-The sources looks old-fashioned and outdated and there are some reasons for it:
+1. Sea builds itself. Rationale: that's the best proof of concept.
 
-- It's a proof that you don't need to be scammed of the cutting edge last standards of the language you use. The older ones are enough to make useful software without any loss in readability and maintainability.
+2. No "modern" cpp. Rationale: use STL as library, not a language extension surrogate.
 
-- No special code editor was used, just vanilla Vim in a 80 columns screen, maximum tabs opened was 2. Indeed, featured code editor is no needed to make a good enough project. It even better because you forced to write simple and modular code.
+3. Avoid use auto as much as you can. Rationale: best option to use auto is inside templates, in other places is leads to loosing control of the source.
 
-- C++ stdlib is useful, but ugly, I don't want to see it inside the project, that's why it fenced off.
+4. Recommended code editor is plain vim. Rationale: by default it has no autocomplete, it formats the code with a linux kernel standards, together it forces you to write cleaner code because it's hard to develop something overcomplicated without special tools for it.
 
-- Sea builds itself.
+5. Don't use singletons. Just write some functions and use static data. Rationale: special olympics competition of making yet another singleton implementation is over.
+
+6. Maximum code width is 80 characters. Rationale: make your code clearer, decreases nesting level and makes you thinking about the names without that messy namespaces.
