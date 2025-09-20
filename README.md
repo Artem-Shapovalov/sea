@@ -14,43 +14,23 @@ https://github.com/user-attachments/assets/a75c76e0-7b8f-4ded-bff6-d0f6c7bd39f4
 
 # Motivation
 
-Lots of the projects have the common pain point - the build system. Build scrips are complicated, testing and CI is complicated, everything is complicated, build systems requires lots of time to learn it just for simple task - build a binary. Further more, all that steps should be billable, but customers don't want ever hear about all of that.
-
 This project goal is make your development as a vacation on seashore.
 
-# Features
+Lots of the projects have the common pain point - overcomplicated tooling. Frequently, complexity of build scripts, testing, or development environment deploying higher than the code itself. Also, I noticed that most of the project I've seen are pretty simple, but developers in their intention to rationalize, automate or bring their own beauty. Such actions without a real reason lead to suffer, and frequently financial losses.
 
-- Interactive interface:
+This project is not aimed to solve all developers problems, but lots of them.
 
-    - Easy to use because all the necessary info is always in front of your eyes.
+# Current status
 
-    - Do not be scared of mistake.
+Demo is done, people interested in, so I decided to continue this project. The current stage is preparing plans for the first release.
 
-- CLI interface:
+# Current features
 
-    - Just 4 keys including "--help".
+- Automatically builds the files in the current directory without a single line of the build script.
 
-    - May build and clean, that convenient to use the sea in your scripts.
+- CLI user interface to use the Sea in your CI/CD pipelines.
 
-- Project management:
-
-    - Avoids compiler-specific features.
-
-    - Have expression evaluator for all of the project settings.
-
-- Build system:
-
-    - Do not require build scripts at all, just build every source file around in the output binary of chosen type.
-
-    - Builds only files affected to changes.
-
-    - Do not bloat your project directory with lots of the objects.
-
-# Installation
-
-Dependencies: gcc compiler
-
-Clone the project and 'make install'
+- Interactive textual user interface, pretty simple and convenient, you don't need to learn lots of languages or tooling.
 
 # Usage
 
@@ -65,29 +45,3 @@ Clone the project and 'make install'
 5. If you want to build in CLI just run 'sea --build'
 
 6. Have fun!
-
-# Not implemented at this iteration
-
-- Build system:
-
-    - For now it works with gcc only.
-
-    - for now no debug versions.
-
-- Hosts:
-
-    - for now it's linux-only.
-
-# Project rules
-
-1. Sea builds itself. Rationale: that's the best proof of concept.
-
-2. No "modern" cpp. Rationale: use STL as library, not a language extension surrogate.
-
-3. Avoid use auto as much as you can. Rationale: best option to use auto is inside templates, in other places is leads to loosing control of the source.
-
-4. Recommended code editor is plain vim. Rationale: by default it has no autocomplete, it formats the code with a linux kernel standards, together it forces you to write cleaner code because it's hard to develop something overcomplicated without special tools for it.
-
-5. Don't use singletons. Just write some functions and use static data. Rationale: special olympics competition of making yet another singleton implementation is over.
-
-6. Maximum code width is 80 characters. Rationale: make your code clearer, decreases nesting level and makes you thinking about the names without that messy namespaces.
