@@ -128,6 +128,23 @@ The syntax is something between C and shell scripts, but but much simpler.
 
 ## Package Manager
 
+Package manager installs tooling and libraries to use in the project. It loads zip files via http from the server and first saves it to the cache storage. Next it unpacks the package from the cache directly to the projects '.package' directory.
+
+Each package can include binaries, source code and simple description with necessary macro definitions, includes, libraries and so on, that would be appended to the current project settings. These settings are located in the 'desc' file in the root of the package. This file have a simple ini format.
+
+Packages should be independent solutions and dependencies are allowed (but not welcomed) for other packages in repository.
+
+Repository should have the package list in the root, that contains the package name and checksum of the zip archive. Names of files should have the same name without extension as mentioned in the list. Finally, the package list file ends with arc above.
+
+Sea is able to generate this package list for any directory with archives to ease the managing of the custom repository. Also it may operate with the local repositories on filesystem.
+
+As the input, package manager requires:
+1. List of the packages to be installed in the current project.
+2. Path to the cache directory.
+3. List of the remote and local repositories.
+
+Package manager should not update the dependencies without explicit user request.
+
 # Helpers
 
 ## Files
