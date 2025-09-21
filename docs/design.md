@@ -114,9 +114,17 @@ Unit tests for the sea are just source code files located at the 'tests' folders
 
 Unit testing have it's own preprocessor that may copy in-place part of the any source. After preprocessing is done, the new test file is generated and it should be compiled. User selects with the special comment the source code file and the name of the object inside it to copy and paste inside the test's source.
 
-All of the tests should be compiled with the coverage flags and covberage information should be captured and merged to correctly tracking the coverage. It depends on type of the compiler used for build.
-
 ## Automation
+
+There's limited scripting support enough to automate some actions in platform-independent way. Scripting language supports:
+
+- expression evaluation
+- filesystem operations
+- branching and loops
+- variables
+- functions
+
+The syntax is something between C and shell scripts, but but much simpler.
 
 ## Package Manager
 
