@@ -147,10 +147,28 @@ Package manager should not update the dependencies without explicit user request
 
 # Helpers
 
+These utilities are used commonly in the all other parts of the application. The main purpose is to separate the system-related code and improve portability.
+
 ## Files
+
+It's a set of the utilities, emulating standard Linux commands to interact with filesystem.
 
 ## Networking
 
+For now, the only network behavior should be implemented is curl-like http download.
+
 ## Timing
 
+Just set of convenient adaptors of stl and stdlib time and date functions.
+
 ## System
+
+Emulation of the system utilities, such as stream editor, convenient regex adapters.
+
+# Common design principles
+
+1. Each block on the functional diagram is a separate module.
+2. All of the modules should be represented as a single instance.
+3. Module interface should be a set of functions.
+4. Only simple types are allowed in the module interface. Structures and classes are not welcome.
+5. Each module is independent and standalone. The only allowed dependency is 'helpers'.
