@@ -46,12 +46,14 @@ This file have a basic ini format. Possible fields:
 
 # API
 
-- `add_repo`
-- `add_local_repo`
-- `get_repos_list`
-- `get_local_repos_list`
-- `find_packages`
-- `install_package`
-- `remove_package`
-- `set_cache_dir`
-- `remove_from_cache`
+- `add_repo`, adds the URL to the inner list.
+- `add_local_repo`, add the absoluye path to the inner list.
+- `remove_repo`, removes the URL from the inner list.
+- `remove_local_repo`, removes the path from the inner list.
+- `find_packages`, searches the package in all of the repositories with matching name by regex, returns all of the matches.
+- `load_package`, searches thr package in all of the repositories, checks if it's already in the cache, and if not or if the checksum is not matching, downloads it to the cache.
+- `install_package`, loads the package if needed and then places to the requested directory.
+- `set_cache_dir`, sets the absolute local path to cache.
+- `set_project_path`, sets the absolute path to the current project.
+
+TODO: unfinished
