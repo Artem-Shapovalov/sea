@@ -49,13 +49,13 @@ The expression engine converts the one string to another, extracting the values 
 
 ## Config file
 
-Config file located at the home directory and named as '.searc'. It have the simple ini format, and contains settings for the program.
+Config file located at the home directory and named as `.searc`. It have the simple ini format, and contains settings for the program.
 
 User may edit it how he want, but the primary way to edit it is the sea interactive mode.
 
 ## Project file
 
-Sea no needed scripts itself, but the project still need to store the information about it. The project file contains specific information for the project and may override some variables from the global config file if needed. The format of this file is simple ini and should have extension '.sea'. Each directory can contain several project file, but in this case sea would process exactly one file at a time.
+Sea no needed scripts itself, but the project still need to store the information about it. The project file contains specific information for the project and may override some variables from the global config file if needed. The format of this file is simple ini and should have extension `.sea`. Each directory can contain several project file, but in this case sea would process exactly one file at a time.
 
 Project file may contain:
 1. Packages required for the project
@@ -95,7 +95,7 @@ Each leaf type processed the own way:
 2. Object nodes should be built from the sources.
 3. Sources should be just checked for their dependencies and if they were changed since the time.
 
-To check out the source dependencies, entire file is scanned for 'include' statement. Builder search all of the inclusions and checks their state. It's a recursive process.
+To check out the source dependencies, entire file is scanned for `include` statement. Builder search all of the inclusions and checks their state. It's a recursive process.
 
 Builder also checks the special comments for explicit dependencies for the files, for example for templates or other binaries that used directly in this file:
 
@@ -110,7 +110,7 @@ According to type of tooling, builder composes the command string and invokes th
 
 ## Unit testing
 
-Unit tests for the sea are just source code files located at the 'tests' folders or just have prefix 'test.'. Each unit test should have the main function and return 0 if success and any other value when the test failed.
+Unit tests for the sea are just source code files that have name prefix `test.`. Each unit test should have the main function and return 0 if success and any other value when the test failed.
 
 Unit testing have it's own preprocessor that may copy in-place part of the any source. After preprocessing is done, the new test file is generated and it should be compiled. User selects with the special comment the source code file and the name of the object inside it to copy and paste inside the test's source.
 
@@ -120,11 +120,6 @@ There's limited scripting support enough to automate some actions in platform-in
 
 - expression evaluation
 - filesystem operations
-- branching and loops
-- variables
-- functions
-
-The syntax is something between C and shell scripts, but but much simpler.
 
 ## Package Manager
 
@@ -171,4 +166,4 @@ Emulation of the system utilities, such as stream editor, convenient regex adapt
 2. All of the modules should be represented as a single instance.
 3. Module interface should be a set of functions.
 4. Only simple types are allowed in the module interface. Structures and classes are not welcome.
-5. Each module is independent and standalone. The only allowed dependency is 'helpers'.
+5. Each module is independent and standalone. The only allowed dependency is `helpers`.
