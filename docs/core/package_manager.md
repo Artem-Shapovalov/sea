@@ -8,7 +8,7 @@ Web and local repositories should have the same structure:
 ./packages/<package name>.7z
 ```
 
-'package name' should fit regex "[0-9a-z_-]+"
+`package name` should fit regex "[0-9a-z_-]+"
 
 ## pkglist
 
