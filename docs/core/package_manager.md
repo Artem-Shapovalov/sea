@@ -18,11 +18,11 @@ This file contains the list of files placed in this Repository. Each line of thi
 <package name>:[list of deps]:[checksum];
 ```
 
-'package name' is the name of the file in 'packages' directory without extension.
+- 'package name' is the name of the file in 'packages' directory without extension.
 
-'list of deps' is a list of another package names that should be installed additionally. Separated with whitespace. Optional, may be empty.
+- 'list of deps' is a list of another package names that should be installed additionally. Separated with whitespace. Optional, may be empty.
 
-'checksum' is a hexadecimal CRC32 of 7z array with package. Optional. In case, when this field is empty, no file would be downloaded except dependencies.
+- 'checksum' is a hexadecimal CRC32 of 7z array with package. Optional. In case, when this field is empty, no file would be downloaded except dependencies.
 
 ## pkglist.chksum
 
