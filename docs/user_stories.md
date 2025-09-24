@@ -32,7 +32,23 @@ User have the empty directory and wants to make the project here.
 
 # Trying best library for the project
 
+User wants to try several libraries for his project and chose the best.
+
+1. Assume the project is already exists, the Sea started right now and runs in interactive mode.
+2. User goes to the project settings and adds the package to his project.
+3. Package manager loads the package and installs it to the project `deps` directory.
+4. User modifies the code and builds the project.
+5. User goes to the project settings and removes the package.
+6. Package manager deletes the project from the `deps` directory, but keep it in cache.
+7. User tries another one and so on.
+
 # Projects with the nested sea projects
+
+User wants to reuse the code from another project and places it in some place in his current projects.
+
+1. There's no other cases instead of build.
+2. Sea checks the filesystem for project files.
+3. Sea prepares list and sort it from the far to near.
 
 # Making a package with libraries and resources
 
