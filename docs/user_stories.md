@@ -34,6 +34,8 @@ User have the empty directory and wants to make the project here.
 
 User wants to try several libraries for his project and chose the best.
 
+## Solution
+
 1. Assume the project is already exists, the Sea started right now and runs in interactive mode.
 2. User goes to the project settings and adds the package to his project.
 3. Package manager loads the package and installs it to the project `deps` directory.
@@ -46,12 +48,21 @@ User wants to try several libraries for his project and chose the best.
 
 User wants to reuse the code from another project and places it in some place in his current projects.
 
+## Solution
+
 1. There's no other cases instead of build.
 2. Sea checks the filesystem for project files.
 3. Sea prepares list and sort it from the far to near.
+4. Sea and package manager checks out the packages and install it if needed at the root project directory
+5. Sea scans the list and collect includes and defines. Include paths are appended to the current project includes, macro definitions may be overriden in the projects near to root.
+6. Builder builds the projects in list and place the output binaries at the root project directory.
 
 # Making a package with libraries and resources
 
 # Unit testing
 
 # Embedding the Sea in CI/CD pipelines
+
+# TODO
+
+1. Seems to be Sea should have a separate component `project manager`
