@@ -19,11 +19,12 @@ bool download_start(std::string url, std::string dir);
  *           downloads this file and return current state.
  *  \param url URL that should be inside inner download pool.
  *  \return State of downloading 0..1
- *  \retval 0 Download did not started or there's no active downloads for
- *            this URL.
- *  \retval 1 Download of this file finished.
- *  \note 1 may be returned only once, then this URL record clears and
- *        further requests for this URL should return 0 */
+ *  \retval 0 Download did not started yet, no bytes written to the file.
+ *  \retval 1 Download of this file finished, all bytes written.
+ *  \retval -1 Download finished with error or there's no active downloads
+ *             for this URL.
+ *  \note 1 May be returned only once, then this URL record clears and
+ *        further requests for this URL should return -1. */
 float download_progress(std::string url);
 
 #endif // LOADER_HPP

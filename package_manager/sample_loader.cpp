@@ -2,6 +2,8 @@
 #include <cstdio>
 #include <thread>
 #include <chrono>
+#include <string>
+#include <fstream>
 
 int main(int argc, char** argv)
 {
@@ -17,10 +19,15 @@ int main(int argc, char** argv)
 		return -1;
 	}
 
-	float progress = 0;
-	while ((progress = download_progress(argv[1])) != 1)
+	while (true)
 	{
+		float progress = download_progress(argv[1]);
 		std::printf("%f\n", progress);
+
+		if (progress == 1 || progress == -1)
+		{
+			break;
+		}
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 

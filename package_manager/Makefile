@@ -22,6 +22,9 @@ loader.o: loader.cpp loader.hpp
 
 sample_loader.cpp:
 
+sample_loader.o: sample_loader.cpp loader.hpp
+	$(CXX) -c sample_loader.cpp -o sample_loader.o
+
 sample_loader: sample_loader.o loader.o
 	$(CXX) sample_loader.o loader.o -o sample_loader -lcurl
 
