@@ -1,0 +1,6 @@
+name:foo
+desc:Sample package.
+category:library
+defines:FOO,BAR=1
+includes:include,include/foo
+library_paths:lib
